@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template_string
 from datetime import datetime, timedelta
 import random
 import string
+import os
 
 app = Flask(__name__)
 
@@ -102,4 +103,5 @@ def admin():
 
     return html
 
-app.run()
+port = int(os.environ.get("PORT", 10000))
+app.run(host="0.0.0.0", port=port)
