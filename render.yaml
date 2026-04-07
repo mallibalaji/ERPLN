@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: erp-license
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
